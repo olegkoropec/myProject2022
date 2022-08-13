@@ -6,8 +6,8 @@ public class Solution {
 
     void stringArr(String [] str){
         int[] number = new int[str.length];
-        Map<Integer, String> myString = new HashMap<>();
-        Map<Character, Integer> mymap = new HashMap<>();
+        Map<Integer, String> myString = new HashMap<Integer, String>();
+        Map<Character, Integer> mymap = new HashMap<Character, Integer>();
         mymap.put('a', 100);
         mymap.put('b', 200);
         mymap.put('c', 300);
@@ -41,13 +41,15 @@ public class Solution {
                 str[i].charAt(j);
                 mymap.get(str[i].charAt(j));
                 number1 = number1 + mymap.get(str[i].charAt(j));
-                System.out.print(str[i].charAt(j) + "=" + mymap.get(str[i].charAt(j)) + "  ");
+                System.out.print(str[i].charAt(j) + " = " + mymap.get(str[i].charAt(j)) + "  ");
             }
             number[i] = number1;
             myString.put(number[i], str[i]);
-            System.out.print(str[i] + "=" + number[i]);
+            System.out.print(str[i] + " = " + number[i]);
+            System.out.print(" " + myString.size());
             System.out.println();
         }
+
         for (int k = 0; k < str.length; k++){
             if (myString.containsKey(str[k])){
                 myString.get(str[k]);
@@ -59,9 +61,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution sol = new Solution();
-        String [] str = {"tea", "eat", "ate", "sto", "ost", "kto"};
+        String [] str = {"tea", "ate", "sto", "ost", "eat", "kto"};
         sol.stringArr(str);
-//		sol.mychar();
 
     }
 }
