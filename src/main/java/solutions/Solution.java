@@ -63,7 +63,5 @@ public class Solution {
         Solution sol = new Solution();
         String [] str = {"tea", "ate", "sto", "ost", "eat", "kto"};
         sol.stringArr(str);
-
     }
 }
-
