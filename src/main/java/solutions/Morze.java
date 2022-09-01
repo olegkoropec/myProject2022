@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Morze {
     public static void main(String[] args) {
+        StringBuilder build = new StringBuilder();
         Map <Character, String> map = new HashMap<Character, String>();
         String morze = "england";
         map.put('a', ".-");
@@ -14,12 +15,10 @@ public class Morze {
         map.put('l', ".---");
         map.put('n', "-");
 
-
         for (int i = 0; i < morze.length(); i ++){
             morze.charAt(i);
-
-            String str = map.get(morze.charAt(i));
-            System.out.print(" " + str);
+           build.append(map.get(morze.charAt(i)));
+            System.out.println(" " + build);
         }
     }
 }
