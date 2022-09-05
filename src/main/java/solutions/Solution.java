@@ -1,67 +1,54 @@
 package solutions;
-
 import java.util.*;
 
-public class Solution {
+class Solution {
+    public int uniqueMorseRepresentations(String[] words) {
+        Map <Character, String> map = new HashMap<>();
+        map.put('a', ".-");
+        map.put('b', "-...");
+        map.put('c', "-.-.");
+        map.put('d', "-..");
+        map.put('e', ".");
+        map.put('f', "..-.");
+        map.put('g', "--.");
+        map.put('h', "....");
+        map.put('i', "..");
+        map.put('j', ".---");
+        map.put('k', "-.-");
+        map.put('l', ".---");
+        map.put('m', "--");
+        map.put('n', "-");
+        map.put('o', "---");
+        map.put('p', ".--.");
+        map.put('q', "--.-");
+        map.put('r', ".-.");
+        map.put('s', "...");
+        map.put('t', "-");
+        map.put('u', "..-");
+        map.put('v', "...-");
+        map.put('w', ".--");
+        map.put('x', "-..-");
+        map.put('y', "-.--");
+        map.put('z', "--..");
 
-    void stringArr(String [] str){
-        int[] number = new int[str.length];
-        Map<Integer, String> myString = new HashMap<Integer, String>();
-        Map<Character, Integer> mymap = new HashMap<Character, Integer>();
-        mymap.put('a', 100);
-        mymap.put('b', 200);
-        mymap.put('c', 300);
-        mymap.put('d', 400);
-        mymap.put('e', 500);
-        mymap.put('f', 600);
-        mymap.put('g', 700);
-        mymap.put('h', 800);
-        mymap.put('i', 900);
-        mymap.put('j', 10);
-        mymap.put('k', 20);
-        mymap.put('l', 30);
-        mymap.put('m', 40);
-        mymap.put('n', 50);
-        mymap.put('o', 60);
-        mymap.put('p', 70);
-        mymap.put('q', 80);
-        mymap.put('r', 90);
-        mymap.put('s', 1);
-        mymap.put('t', 2);
-        mymap.put('u', 3);
-        mymap.put('v', 4);
-        mymap.put('w', 5);
-        mymap.put('x', 6);
-        mymap.put('y', 7);
-        mymap.put('z', 8);
-        mymap.put(' ', 1000);
-        for (int i = 0; i < str.length; i ++){
-            int number1 = 0;
-            for (int j = 0; j < str[i].length(); j ++){
-                str[i].charAt(j);
-                mymap.get(str[i].charAt(j));
-                number1 = number1 + mymap.get(str[i].charAt(j));
-                System.out.print(str[i].charAt(j) + " = " + mymap.get(str[i].charAt(j)) + "  ");
+        Set<String> set = new HashSet<>();
+
+        for (String word : words) {
+            StringBuilder build = new StringBuilder();
+            for (int i = 0; i < word.length(); i++) {
+                char ch = word.charAt(i);
+                build.append(map.get(ch));
             }
-            number[i] = number1;
-            myString.put(number[i], str[i]);
-            System.out.print(str[i] + " = " + number[i]);
-            System.out.print(" " + myString.size());
-            System.out.println();
+            String string = build.toString();
+            set.add(string);
+            System.out.println(string);
         }
-
-        for (int k = 0; k < str.length; k++){
-            if (myString.containsKey(str[k])){
-                myString.get(str[k]);
-                System.out.println(myString.get(str[k]));
-            }
-        }
-        System.out.println(myString);
+        System.out.println(set.size());
+            return set.size();
     }
-
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-        String [] str = {"tea", "ate", "sto", "ost", "eat", "kto"};
-        sol.stringArr(str);
-    }
+        public static void main(String[] args) {
+        Solution solution = new Solution();
+            String [] words = {"rwjje","aittjje","auyyn","lqtktn","lmjwn"};
+            solution.uniqueMorseRepresentations(words);
+}
 }
